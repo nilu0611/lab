@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED Simulation</title>
+    <style>
+        #led {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #status {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="led" style="background-color: #ff0000;" onclick="turnOnOff()"></div>
+    <p id="status">LED is OFF</p>
+    <script>
+        let ledStatus = false;
+        
+        function turnOnOff() {
+            if (ledStatus) {
+                document.getElementById("led").style.backgroundColor = "#ff0000";
+                document.getElementById("status").innerHTML = "LED is OFF";
+                ledStatus = false;
+            } else {
+                document.getElementById("led").style.backgroundColor = "#00ff00";
+                document.getElementById("status").innerHTML = "LED is ON";
+                ledStatus = true;
+            }
+        }
+    </script>
+</body>
+</html>

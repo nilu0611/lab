@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .queue-container {
+      width: 800px;
+      height: 200px;
+      border: 1px solid black;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .queue-element {
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      margin: 10px;
+      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .queue-element:hover {
+      transform: scale(1.2);
+    }
+    button, input[type="text"] {
+      margin: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background-color: #3e8e41;
+    }
+    input[type="text"] {
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Linear Queue Animation</h1>
+  <div class="queue-container" id="queue-container">
+    <!-- queue elements will be added here -->
+  </div>
+  <input type="text" id="enqueue-value" placeholder="Enter value to enqueue">
+  <button id="enqueue-btn">Enqueue</button>
+  <button id="dequeue-btn">Dequeue</button>
+  <script>
+    let queue = [];
+    let queueSize = 10;
+
+    document.getElementById("enqueue-btn").addEventListener("click", enqueue);
+    document.getElementById("dequeue-btn").addEventListener("click", dequeue);
+
+    function enqueue() {
+      const value = document.getElementById("enqueue-value").value;
+      if (value.trim() !== "" && queue.length < queueSize) {
+        let element = document.createElement("div");
+        element.className = "queue-element";
+        element.textContent = value;
+        queue.push(element);
+        document.getElementById("queue-container").appendChild(element);
+        element.style.transform = "scale(0)";
+        setTimeout(() => {
+          element.style.transform = "scale(1)";
+        }, 10);
+        document.getElementById("enqueue-value").value = "";
+      }
+    }
+
+    function dequeue() {
+      if (queue.length > 0) {
+        let element = queue.shift();
+        element.style.transform = "scale(0)";
+        setTimeout(() => {
+          document.getElementById("queue-container").removeChild(element);
+        }, 300);
+      }
+    }
+  </script>
+</body>
+</html>

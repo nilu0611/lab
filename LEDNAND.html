@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .led {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: gray;
+      display: inline-block;
+      margin: 10px;
+    }
+    .led.on {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>NAND Gate LED Simulation</h1>
+  <div>
+    <label for="input1">
+      <input type="checkbox" id="input1" /> Input 1
+    </label>
+    <label for="input2">
+      <input type="checkbox" id="input2" /> Input 2
+    </label>
+    <div class="led" id="led"></div>
+  </div>
+
+  <script>
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const led = document.getElementById("led");
+
+    input1.addEventListener("change", updateLed);
+    input2.addEventListener("change", updateLed);
+
+    function updateLed() {
+      const input1Value = input1.checked;
+      const input2Value = input2.checked;
+      const output = !(input1Value && input2Value);
+      led.classList.toggle("on", output);
+    }
+  </script>
+</body>
+</html>
