@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Information Portal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+    
+        .bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+        }
+    
+        .content {
+            position: relative;
+            z-index: 4; /* Raised above the overlay */
+        }
+    
+        .overlay {
+            /* Make the overlay fully transparent so the video is visible */
+            /* You can adjust the opacity to make the text more readable if necessary */
+            background-color: rgba(255,255,255,0); /* Fully transparent */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 200; /* Overlay above the video, but below the content */
+        }
+    
+        .nav-pills .nav-link {
+            border-radius: 0.25rem;
+        }
+    
+        .tab-content > .tab-pane {
+            padding: 20px;
+            background-color: rgba(255,255,255,0.8); /* Semi-transparent white background */
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-top: -1px;
+        }
+    
+        h4 {
+            color: #0056b3;
+        }
+    
+        .footer {
+            background-color: #e9ecef;
+            color: #6c757d;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            z-index: 2; /* Ensuring the footer is above the overlay and video */
+        }
+    
+        .footer .container {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .footer .text-muted {
+            margin: 0;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+                console.log("Active tab is: " + e.target.id);
+            });
+        });
+    </script>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo" class="bg-video">
+        <source src="image.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    
+<div class="container mt-5">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="sdp-tab" data-toggle="pill" href="#sdp" role="tab" aria-controls="sdp" aria-selected="true">SDP</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="edi-tab" data-toggle="pill" href="#edi" role="tab" aria-controls="edi" aria-selected="false">EDI</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="dt-tab" data-toggle="pill" href="#dt" role="tab" aria-controls="dt" aria-selected="false">DT</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="course-projects-tab" data-toggle="pill" href="#course-projects" role="tab" aria-controls="course-projects" aria-selected="false">Course Projects</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <!-- SDP Tab Pane -->
+        <div class="tab-pane fade show active" id="sdp" role="tabpanel" aria-labelledby="sdp-tab">
+            <h4>Student Development Programmes (SDP)</h4>
+            <p>Welcome to the Student Development Programmes at VIT, where we believe in the holistic development of our students beyond the confines of the classroom. Here we present a comprehensive approach to nurturing the skills required to excel in the global professional environment.</p>
+            <!-- Introduction -->
+            <p>Our SDP focuses on three core areas:</p>
+            <ul>
+                <li><strong>Soft Skill Development:</strong> Communication, teamwork, and leadership skills workshops.</li>
+                <li><strong>Technical Skill Enhancement:</strong> Coding boot camps, hackathons, and tech talks by industry leaders.</li>
+                <li><strong>Wellness and Mindfulness:</strong> Stress management, meditation sessions, and sports activities.</li>
+            </ul>
+            <!-- Objectives -->
+            <p>The objectives of our SDP are to:</p>
+            <ol>
+                <li>Equip students with essential life skills.</li>
+                <li>Prepare students for the challenges of the professional world.</li>
+                <li>Encourage creativity and critical thinking.</li>
+                <li>Promote physical and mental well-being.</li>
+            </ol>
+            <!-- Upcoming Events / Schedule -->
+            <h5>Upcoming SDP Events:</h5>
+            <p>Don't miss out on our upcoming events designed to take your skills to the next level:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AI Bootcamp</td>
+                        <td>June 10, 2024</td>
+                        <td>Tech Park Auditorium</td>
+                        <td>An intensive workshop on AI and machine learning fundamentals.</td>
+                    </tr>
+                    <tr>
+                        <td>Leadership Workshop</td>
+                        <td>July 22, 2024</td>
+                        <td>Center for Excellence</td>
+                        <td>A seminar on developing effective leadership strategies in the workplace.</td>
+                    </tr>
+                    <tr>
+                        <td>Hackathon 2024</td>
+                        <td>September 5-6, 2024</td>
+                        <td>Innovation Hub</td>
+                        <td>A 24-hour coding event to solve real-world problems with technology.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Testimonials / Quotes -->
+            <blockquote class="blockquote">
+                <p class="mb-0">"The SDP at VIT has been transformative for me. It's incredible how much my communication skills have improved!"</p>
+                <footer class="blockquote-footer">Nilesh, <cite title="Source Title">TY,Computer Engineering</cite></footer>
+            </blockquote>
+            <!-- Call to Action -->
+            <p>Interested in joining our SDP? <a href="#" class="btn btn-primary">Register Now</a> or <a href="#" class="btn btn-secondary">Contact Us</a> for more information.</p>
+        </div>
+        <!-- EDI Tab Pane -->
+<div class="tab-pane fade" id="edi" role="tabpanel" aria-labelledby="edi-tab">
+    <h4>Engineering Development Innovation (EDI)</h4>
+    <p>The EDI initiative is dedicated to providing engineering students with real-world experience and hands-on practice in their field of study. Through our industry partnerships, we offer a platform for innovation and the application of theoretical knowledge.</p>
+    <!-- Introduction -->
+    <p>EDI focuses on the following:</p>
+    <ul>ss
+        <li><strong>Internships:</strong> Opportunities to work with tech leaders and startups.</li>
+        <li><strong>Project-Based Learning:</strong> Team projects that address industry challenges.</li>
+        <li><strong>Community Involvement:</strong> Initiatives that contribute to societal welfare through engineering solutions.</li>
+    </ul>
+    <!-- Objectives -->
+    <p>Our key objectives include:</p>
+    <ol>
+        <li>Enhancing practical engineering skills.</li>
+        <li>Fostering innovation and entrepreneurial thinking.</li>
+        <li>Developing leadership and project management abilities.</li>
+        <li>Contributing to community development through technology.</li>
+    </ol>
+    <!-- Testimonials / Quotes -->
+    <blockquote class="blockquote">
+        <p class="mb-0">"My internship through EDI was a game-changer; I worked on meaningful projects and made great professional connections."</p>
+        <footer class="blockquote-footer">Nilesh, <cite title="Source Title">TY,Computer Engineering</cite></footer>
+    </blockquote>
+    <!-- Call to Action -->
+    <p>Want to jumpstart your engineering career with EDI? <a href="#" class="btn btn-primary">Apply Now</a> or reach out for <a href="#" class="btn btn-secondary">More Information</a>.</p>
+</div>
+
+<!-- DT Tab Pane -->
+<div class="tab-pane fade" id="dt" role="tabpanel" aria-labelledby="dt-tab">
+    <h4>Design Thinking (DT)</h4>
+    <p>Our DT curriculum is a revolutionary approach that empowers students to tackle complex problems with innovative solutions. This human-centered methodology drives creativity and innovation at VIT.</p>
+    <!-- Introduction -->
+    <p>DT is structured around five stages:</p>
+    <ul>
+        <li><strong>Empathize:</strong> Understanding the needs of users.</li>
+        <li><strong>Define:</strong> Framing the problem.</li>
+        <li><strong>Ideate:</strong> Generating creative solutions.</li>
+        <li><strong>Prototype:</strong> Creating models of potential solutions.</li>
+        <li><strong>Test:</strong> Evaluating the effectiveness of solutions.</li>
+    </ul>
+    <!-- Objectives -->
+    <p>Our DT program aims to:</p>
+    <ol>
+        <li>Cultivate a mindset of innovation and problem-solving.</li>
+        <li>Encourage interdisciplinary collaboration.</li>
+        <li>Develop prototypes for industry and community issues.</li>
+        <li>Integrate feedback to refine solutions.</li>
+    </ol>
+    <!-- Testimonials / Quotes -->
+    <blockquote class="blockquote">
+        <p class="mb-0">"Design Thinking has transformed the way I approach problems. It's not just about finding a solution; it's about finding the right solution."</p>
+        <footer class="blockquote-footer">Nilesh, <cite title="Source Title">TY,Computer Engineering</cite></footer>
+    </blockquote>
+    <!-- Call to Action -->
+    <p>Ready to embrace innovation? <a href="#" class="btn btn-primary">Learn More</a> about our DT workshops and events.</p>
+</div>
+
+<!-- Course Projects Tab Pane -->
+<div class="tab-pane fade" id="course-projects" role="tabpanel" aria-labelledby="course-projects-tab">
+    <h4>Course Projects</h4>
+    <p>Course Projects are a cornerstone of the academic experience at VIT, enabling students to apply their knowledge in practical, team-based projects that often span multiple semesters.</p>
+    <!-- Introduction -->
+    <p>Key aspects of Course Projects include:</p>
+    <ul>
+        <li><strong>Industry Collaboration:</strong> Partnering with companies to work on current challenges.</li>
+        <li><strong>Research Opportunities:</strong> Conducting original research under faculty supervision.</li>
+        <li><strong>Capstone Projects:</strong> Culminating projects that synthesize course learning outcomes.</li>
+    </ul>
+    <!-- Objectives -->
+    <p>The objectives of our Course Projects are to:</p>
+    <ol>
+        <li>Develop a deep understanding of subject matter.</li>
+        <li>Enhance critical thinking and problem-solving skills.</li>
+        <li>Encourage teamwork and effective communication.</li>
+        <li>Promote innovation and original research.</li>
+    </ol>
+    <!-- Testimonials / Quotes -->
+    <blockquote class="blockquote">
+        <p class="mb-0">"Working on a course project opened up a new world of opportunities for me. It was more than just an assignment; it was a real contribution to my field."</p>
+        <footer class="blockquote-footer">Nilesh <cite title="Source Title">TY,Computer Engineering</cite></footer>
+    </blockquote>
+    <!-- Call to Action -->
+    <p>Explore our range of Course Projects and find your passion. <a href="#" class="btn btn-primary">Discover Projects</a> or <a href="#" class="btn btn-secondary">Contact a Project Coordinator</a>.</p>
+</div>
+
+
+        <!-- The rest of the tab panes (EDI, DT, Course Projects) would be filled similarly with corresponding detailed content as shown for SDP. -->
+        
+    </div>
+</div>
+
+</body>
+</html>
