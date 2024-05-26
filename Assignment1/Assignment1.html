@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nilesh Baban Binnar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Background video styles */
+        .bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        /* Overlay styles */
+       
+
+        /* Container styles */
+        .container {
+            max-width: 1200px; /* Maximum width of the container */
+            width: 100%; /* Full width */
+            margin: auto; /* Center container horizontally */
+            padding: 0 1rem; /* Padding on the sides */
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            height: 100%; /* Ensure container takes full height */
+        }
+
+        /* Custom border box styles */
+        .custom-border {
+            border: 1px solid white;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Optional: Add background to make text more readable on the video */
+            border-radius: 8px; /* Rounded corners for aesthetics */
+            height: 100%; /* Make each box occupy full height */
+        }
+
+        /* Text color */
+        .text-white {
+            color: white;
+        }
+
+        /* Heading styles */
+        h1, h3 {
+            margin-bottom: 1rem;
+        } 
+        .custom-border:hover {
+            transform: scale(1.1); /* Increase the scale on hover */
+        }
+        /* Section heading styles */
+        .section-heading {
+            margin-bottom: 10px;
+        }
+
+        /* Unordered list styles */
+        .list-unstyled {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        /* Link color */
+        a {
+            color: orange;
+            text-decoration: none; /* Remove default underline */
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+        .text-orange {
+            color: orange;
+        }
+        .text-orangered{
+            color: darkorange;
+        }
+    
+        /* Hover effect for links */
+        a:hover {
+            color: darkorange; /* Change color on hover */
+        }
+
+        @media (max-width: 576px) {
+            .custom-border {
+                padding: 10px;
+                margin: 10px 0; /* Stack vertically on small screens */
+            }
+            .container {
+                padding: 0 5px; /* Reduce padding */
+            }
+            h1, h3 {
+                font-size: 1.5rem; /* Smaller headings */
+            }
+        }
+        
+        /* Medium devices (tablets, 768px and up) */
+        @media (max-width: 768px) {
+            .custom-border {
+                margin: 10px; /* Adjust margins */
+            }
+            .container {
+                padding: 0 10px; /* Adjust container padding */
+            }
+            h1, h3 {
+                font-size: 1.75rem; /* Adjust heading sizes */
+            }
+        }
+        
+        /* Large devices (desktops, 992px and up) */
+        @media (max-width: 992px) {
+            .custom-border {
+                /* You can add specific styles for large devices if needed */
+            }
+        }
+        
+       
+        
+        
+    </style>
+</head>
+<body>
+    
+    
+    
+
+    <!-- Background video -->
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="bg-video">
+        <source src="image.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay -->
+   
+    <!-- Container -->
+    <div class="container">
+        <div class="text-center">
+            <h1 class="text-orange mb-4">Nilesh Baban Binnar</h1>
+            <h3 class="text-orange mb-4">Vishwakarma Institute of Technology, Pune</h3>
+            
+            
+            <div class="text-orange mb-4">
+                Pune, Maharashtra, India | <a href="mailto:nilesh.binnar0611@gmail.com" class="text-orange">nilesh.binnar0611@gmail.com</a> | 8668997386<br>
+                <a href="https://www.linkedin.com/in/nilesh-binnar-a49b33240" class="text-orange">LinkedIn</a> | 
+                <a href="https://github.com/nilu0611" class="text-orange">GitHub</a>
+            </div>
+        </div>
+        <br>
+        <!-- CV Details -->
+        <div class="row justify-content-center">
+            <div class="col-lg-3">
+                <div class="custom-border mx-2">
+                    <!-- Education column content -->
+                    <h3 class="section-heading text-orangered">Education</h3>
+                    <p class="text-white">B.Tech in Computer Engineering<br>
+                   
+                    2021 - Present | Current CGPA: 8.77</p>
+                    <p class="text-white">Grade XII - Dhruv Academy, Sangamner, 2021 | 95.6%</p>
+                    <p class="text-white">Grade X - Vasundhara Academy, Akole, 2019 | 94.2%</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-border mx-2">
+                    <!-- Skills column content -->
+                    <h3 class="section-heading text-orangered">Skills</h3>
+                   
+                         <p class="text-white">Programming Languages: C, Python, Java</p>
+                        <p class="text-white">Front End: React.js, HTML, CSS, JavaScript, PHP</p>
+                        <p class="text-white">Backend: DBMS, Linux, Cloud Computing, Node.js</p>
+                        <p class="text-white">Technical: Data Science, Machine Learning, AI, TensorFlow, Deep Learning, Neural Networks</p>
+                
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-border mx-2 box-certification">
+                    <h3 class="section-heading text-orangered">Projects</h3>
+                    <!-- Project Details -->
+                    <p class="text-white">1) Toxic Chat Detection Using Deep Learning...</p>
+                    <p class="text-white">2) Image Caption Generation Using Deep Learning...</p>
+                    <p class="text-white">3) Recruitment System Using Java...</p>
+                    <p class="text-white">4) Weather Forecast Website...</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="custom-border mx-2">
+                    <h3 class="section-heading text-orangered">Certifications</h3>
+                    
+                        <p class="text-white">4 Star Coder at HackerRank in C and Python, 2024</p>
+                        <p class="text-white">5 Star Coder at HackerRank in Java and SQL, 2024</p>
+                        <p class="text-white">Scopus Index CIIT-2023: Toxic Chat Detection Using Deep Learning</p>
+                        <p class="text-white">Scopus Index ICET-2023: Image Caption Generation Using Deep Learning</p>
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Sections -->
+    </div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
