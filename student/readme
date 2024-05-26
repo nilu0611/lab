@@ -1,0 +1,8 @@
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    prn VARCHAR(50) UNIQUE NOT NULL,
+    cgpa DECIMAL(3, 2),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(id)
+);
