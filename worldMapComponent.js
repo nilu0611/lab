@@ -31,3 +31,4 @@ const MapComponent = ({ center, zoom, markers }) => {
 };
 
 export default MapComponent;
+//npm install react-leaflet leaflet
