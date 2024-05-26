@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calendar {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .month {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .month h2 {
+      margin: 0;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .weekdays, .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    .weekdays div, .days div {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .days div {
+      border: 1px solid #ccc;
+      margin: -1px;
+    }
+
+    .days .today {
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar">
+    <div class="month">
+      <button id="prev">&#10094;</button>
+      <h2 id="month-year"></h2>
+      <button id="next">&#10095;</button>
+    </div>
+    <div class="weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    <div class="days" id="days"></div>
+  </div>
+  <script>
+    const monthYear = document.getElementById('month-year');
+    const daysContainer = document.getElementById('days');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentDate = new Date();
+
+    function renderCalendar() {
+      const month = currentDate.getMonth();
+      const year = currentDate.getFullYear();
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const lastDate = new Date(year, month + 1, 0).getDate();
+      
+      monthYear.innerText = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+
+      daysContainer.innerHTML = '';
+
+      for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement('div');
+        daysContainer.appendChild(emptyCell);
+      }
+
+      for (let i = 1; i <= lastDate; i++) {
+        const dayCell = document.createElement('div');
+        dayCell.innerText = i;
+        if (i === currentDate.getDate() && new Date().getMonth() === month && new Date().getFullYear() === year) {
+          dayCell.classList.add('today');
+        }
+        daysContainer.appendChild(dayCell);
+      }
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar();
+    });
+
+    renderCalendar();
+  </script>
+</body>
+</html>
