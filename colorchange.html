@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header, footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    .color-section {
+      padding: 50px;
+      margin: 20px 0;
+      background-color: lightgray;
+      transition: background-color 0.5s ease;
+    }
+    .button-group button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Layout</h1>
+  </header>
+
+  <div class="container">
+    <div class="color-section" id="colorSection">
+      Click the buttons to change my color!
+    </div>
+    <div class="button-group">
+      <button onclick="changeColor('lightcoral')">Red</button>
+      <button onclick="changeColor('lightblue')">Blue</button>
+      <button onclick="changeColor('lightgreen')">Green</button>
+      <button onclick="changeColor('lightgoldenrodyellow')">Yellow</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Footer Content</p>
+  </footer>
+
+  <script>
+    function changeColor(color) {
+      document.getElementById('colorSection').style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>

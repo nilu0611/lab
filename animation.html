@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#animation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: red;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.element {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+#animation2 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: blue;
+  animation: move 5s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1>My First JavaScript Animation</h1>
+
+<div id="animation">1</div>
+<div id="animation2">2</div>
+
+<button onclick="myMove()">Start Animation</button>
+
+<script>
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animation");
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
